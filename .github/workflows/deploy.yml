@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -29,7 +29,6 @@ jobs:
           node-version: 22
           cache: "npm"
 
-      # Cache Quartz build artifacts to speed up subsequent builds
       - name: Cache Quartz
         uses: actions/cache@v4
         with:
