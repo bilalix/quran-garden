@@ -1,62 +1,76 @@
-# Quran Garden 🌿
+# 🌿 Quran Garden
 
-This repository powers my public digital garden:
+![GitHub last
+commit](https://img.shields.io/github/last-commit/bilalix/quran-garden)
+![GitHub repo
+size](https://img.shields.io/github/repo-size/bilalix/quran-garden)
+![GitHub
+Pages](https://img.shields.io/badge/deployed-GitHub%20Pages-blue)
+![Quartz](https://img.shields.io/badge/built%20with-Quartz-8A2BE2)
 
-👉 https://bilalix.github.io/quran-garden/
+## 📖 Live Site
 
-It is built using **Quartz** (an Obsidian-compatible static site
-generator) and deployed automatically via **GitHub Pages (GitHub
-Actions)**.
-
-The goal of this project is to:
-
--   📖 Reference the Qur'an using `quran-to-obsidian`
--   🧠 Create personal notes that link to ayat and surahs
--   🔁 Enable backlinks
--   🕸 Provide graph-based knowledge exploration
--   🚀 Deploy automatically on every push --- no server required
+👉 **https://bilalix.github.io/quran-garden/**
 
 ------------------------------------------------------------------------
 
-## 🏗 Architecture Overview
+## 🧠 Project Vision
+
+This repository is my public **digital knowledge garden** built around:
+
+-   📖 Qur'an reference system (via `quran-to-obsidian`)
+-   🧠 Personal reflections and thematic notes
+-   🔁 Automatic backlinks
+-   🕸 Graph-based exploration
+-   🚀 Zero-server deployment (GitHub Pages only)
+
+The goal is to create a connected, explorable Qur'anic knowledge base
+--- not just linear notes.
+
+------------------------------------------------------------------------
+
+## 🏗 Architecture
 
 Local workflow:
 
-Obsidian → Git commit → GitHub → GitHub Actions → GitHub Pages
+Obsidian → Git → GitHub → GitHub Actions → GitHub Pages
 
-There is **no VPS or server** involved.\
-Everything is statically built and hosted by GitHub.
+There is **no VPS or backend server**.\
+Everything is statically generated using Quartz.
 
 ------------------------------------------------------------------------
 
 ## 📂 Repository Structure
 
     content/
-      quran/        # Generated markdown from quran-to-obsidian (reference layer)
-      notes/        # My personal notes
+      quran/        # Generated markdown from quran-to-obsidian
+      notes/        # Personal notes and reflections
 
-Quartz reads everything inside `content/` and builds the site.
+Quartz builds everything inside `content/` into a static site.
 
 ------------------------------------------------------------------------
 
 ## 📖 Qur'an Reference Layer
 
-The folder `content/quran/` contains Markdown files generated from:
+The folder:
+
+    content/quran/
+
+Contains markdown generated from:
 
 https://github.com/subaanqasim/quran-to-obsidian
 
-Steps:
+### Setup Steps
 
-1.  Download the `Quran.zip` from the releases page.
+1.  Download `Quran.zip` from the repository releases.
 
 2.  Unzip it.
 
-3.  Copy the generated markdown files into:
+3.  Copy all generated markdown files into:
 
         content/quran/
 
-These files are **not edited manually**. They serve as a reference layer
-that my notes link to.
+These files are **reference-only** and not manually edited.
 
 ------------------------------------------------------------------------
 
@@ -66,30 +80,30 @@ All personal notes go inside:
 
     content/notes/
 
-Example link to an ayah:
+Example ayah link:
 
     [[2:255]]
 
-Quartz automatically generates:
+Quartz automatically provides:
 
 -   Backlinks
--   Local graph
--   Global graph
--   Search index
+-   Local graph view
+-   Global graph view
+-   Full-text search
 
 ------------------------------------------------------------------------
 
-## 🚀 Deployment (Automatic)
+## 🚀 Deployment
 
-Deployment is handled by:
+Deployment is handled automatically via:
 
-`.github/workflows/deploy.yml`
+    .github/workflows/deploy.yml
 
 On every push to the `v4` branch:
 
-1.  GitHub installs dependencies
-2.  Builds Quartz
-3.  Publishes to GitHub Pages
+1.  Dependencies install
+2.  Quartz builds the site
+3.  GitHub Pages publishes it
 
 Site URL:
 
@@ -99,7 +113,7 @@ https://bilalix.github.io/quran-garden/
 
 ## 🛠 Local Development
 
-Clone the repo:
+Clone the repository:
 
     git clone https://github.com/bilalix/quran-garden.git
     cd quran-garden
@@ -112,7 +126,7 @@ Run local preview:
 
     npx quartz build --serve
 
-Then open:
+Open:
 
 http://localhost:8080
 
@@ -120,7 +134,7 @@ http://localhost:8080
 
 ## 🔄 Updating Content
 
-After writing notes:
+After editing notes:
 
     npx quartz sync
 
@@ -132,16 +146,17 @@ This will:
 
 ------------------------------------------------------------------------
 
-## 🌱 Future Ideas
+## 🌱 Planned Enhancements
 
--   Thematic tafsir notes
--   Topic-based linking across surahs
--   Personal reflections connected via graph
--   Arabic/English dual-note structure
+-   Thematic tafsir clustering
+-   Topic-based cross-surah linking
+-   Arabic ↔ English structured notes
+-   Structured study pathways
+-   Knowledge graph refinement
 
 ------------------------------------------------------------------------
 
-## License
+## ⚖ License
 
-Content is personal.\
+Personal content © Bilalix\
 Qur'an text attribution follows the source repository.
